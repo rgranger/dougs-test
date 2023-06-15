@@ -1,13 +1,21 @@
 export function handleRequest(req, res) {
-    const result = parseInputs(req.body)
+    const parseResult = parseInputs(req.body)
 
-    if (result.type === 'Error') {
+    if (parseResult.type === 'Error') {
         res.status(400).json({ error: 'Invalid payload' })
-    } else if (result.type === 'Success') {
-        const { movements, balances } = result.data
+    } else if (parseResult.type === 'Success') {
+        const { movements, balances } = parseResult.data
         
-        res.send('Hello World')
+        const validationResult = validateMovements(movements, balances)
+
+        if (validationResult.type === 'Error') {
+            res.status(418).json({ message: "I'm a teapot", reasons: [] })
+        } else if (validationResult.type === 'Success') {
+            res.status(202).json({ message: 'Accepted' })
+        }
     }
+
+    res.status(500).json({ error: 'Should not be here' })
 }
 
 function parseInputs(body) {
@@ -20,5 +28,13 @@ function parseInputs(body) {
             movements: body.movements,
             balances: body.balances,
         }
+    }
+}
+
+function validateMovements(movements, balances) {
+    // TODO add algorithm
+
+    return {
+        type: 'Success'
     }
 }
