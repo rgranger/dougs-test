@@ -8,10 +8,10 @@ export function validateMovements(movements, balances) {
 
     balances.sort((balanceA, balanceB) => balanceA.date - balanceB.date)
 
-    const movementsHash = {}
-
     return balances.reduce((balancesResult, currentBalance, currentBalanceIndex) => {
         const previousBalance = currentBalanceIndex > 0 ? balances[currentBalanceIndex - 1] : null
+
+        const movementsHash = {}
 
         const movementsTotal = movements.reduce((acc, currentMovement) => {
             // Check if movement is not a duplicate
