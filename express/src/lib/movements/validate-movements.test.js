@@ -50,11 +50,11 @@ test('it should return an error when there are insatisfied balances', () => {
 
 test('it should return a success when all the balances are satisfied (simple)', () => {
     const movements = [
-        { id: 12, date: new Date(1995, 5, 25).getTime(), amount: 100 },
-        { id: 14, date: new Date(2023, 8, 21).getTime(), amount: -200 },
+        { id: 12, date: new Date(1995, 5, 25).getTime(), amount: 100.1 },
+        { id: 14, date: new Date(2023, 8, 21).getTime(), amount: -200.2 },
     ]
     const balances = [
-        { date: new Date(2024, 8, 26).getTime(), balance: -100 },
+        { date: new Date(2024, 8, 26).getTime(), balance: -100.1 },
     ]
 
     expect(validateMovements(movements, balances)).toStrictEqual({
