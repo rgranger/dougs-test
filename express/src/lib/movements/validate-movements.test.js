@@ -109,3 +109,17 @@ test('it should return a success when all the balances are satisfied (multiple w
         reasons: []
     })
 })
+
+test('it should return a success when there are no movements and the balances are 0', () => {
+    const movements = []
+    const balances = [
+        { date: new Date(2018, 8, 26).getTime(), balance: 0 },
+        { date: new Date(2014, 8, 26).getTime(), balance: 0 },
+        { date: new Date(2024, 8, 26).getTime(), balance: 0 },
+    ]
+
+    expect(validateMovements(movements, balances)).toStrictEqual({
+        type: 'Success',
+        reasons: []
+    })
+})
