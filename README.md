@@ -6,7 +6,7 @@ Test technique pour Dougs
 
 - express - Solution using NodeJS 20.3.0 and express
 - nest - Solution using NodeJS 20.3.0 and NestJS
-- deno - WIP
+- deno - Solution using Deno 1.17.1 and oak
 - bun - WIP
 
 ## For the express solution
@@ -58,4 +58,22 @@ npm start
 
 ```
 npm test
+```
+
+## For the deno solution
+
+```
+cd deno
+```
+
+### Start WebServer
+
+```
+deno run --allow-net src/main.ts
+```
+
+### Run test suites
+
+```
+deno test
 ```
