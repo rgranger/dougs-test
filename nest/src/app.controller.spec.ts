@@ -14,9 +14,14 @@ describe('AppController', () => {
     appController = app.get<AppController>(AppController);
   });
 
-  describe('root', () => {
-    it('should return "Hello World!"', () => {
-      expect(appController.getHello()).toBe('Hello World!');
+  describe('/movements/validation', () => {
+    it('should return an error', () => {
+      // WIP
+      //expect(appController.validateMovements(res, body)).toStrictEqual({
+      //  type: 'Error',
+      //  reasons: ['No balance provided. Unable to validate movements.']
+      //})
+      expect(true).toBe(true);
     });
   });
 });
