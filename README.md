@@ -7,7 +7,6 @@ Test technique pour Dougs
 - express - Solution using NodeJS 20.3.0 and express
 - nest - Solution using NodeJS 20.3.0 and NestJS
 - deno - Solution using Deno 1.17.1 and oak
-- bun - (for NestJS support: https://github.com/oven-sh/bun/issues/1641)
 
 ## For the express solution
 
